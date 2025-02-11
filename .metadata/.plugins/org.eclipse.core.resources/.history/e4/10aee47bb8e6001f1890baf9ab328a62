@@ -1,0 +1,5 @@
+package com.codeonce.service;
+
+public class IEmployeeService {
+	public int getEmployeesCount();
+}

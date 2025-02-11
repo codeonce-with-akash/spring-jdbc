@@ -1,0 +1,34 @@
+package com.codeonce.service;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codeonce.dao.IEmployeeDao;
+
+@Service("employee-service")
+public class EmployeeServiceImpl implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeDao employeeDao;
+	
+	@Override
+	public int getEmployeesCount() {
+		int employeesCount = employeeDao.getEmployeesCount();
+		return employeesCount;
+	}
+	
+	@Override
+	public float getEmployeeSalByEno(int eno) {
+		float empSal = employeeDao.getEmployeeSalByEno(eno);
+		return empSal;
+	}
+	
+	@Override
+	public Map<String, Object> getEmployeeDetailsByEno(int eno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.codeonce.config;
+
+public class DatasourceConfig {
+
+}

@@ -1,0 +1,9 @@
+package com.codeonce.dao;
+
+import java.util.Map;
+
+public interface IEmployeeDao {
+	public int getEmployeesCount();
+	public float getEmployeeSalByEno(int eno);
+	public Map<String, Object> getEmployeeDetailsByEno();
+}

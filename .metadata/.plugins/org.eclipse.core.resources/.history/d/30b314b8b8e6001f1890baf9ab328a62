@@ -1,0 +1,20 @@
+package com.codeonce.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codeonce.dao.IEmployeDao;
+
+@Service
+public class EmployeeServiceImpl implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeDao employeDao;
+	
+	@Override
+	public int getEmployeesCount() {
+		emp
+		return 0;
+	}
+
+}

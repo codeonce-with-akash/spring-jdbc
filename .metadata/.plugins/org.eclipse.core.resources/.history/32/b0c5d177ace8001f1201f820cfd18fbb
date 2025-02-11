@@ -1,0 +1,9 @@
+package com.codeonce.service;
+
+import java.util.Map;
+
+public interface IEmployeeService {
+	public int getEmployeesCount();
+	public float getEmployeeSalByEno(int eno);
+	public Map<String, Object> getEmployeeDetailsByEno(int eno);
+}
