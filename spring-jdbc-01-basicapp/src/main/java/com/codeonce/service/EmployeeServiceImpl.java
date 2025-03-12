@@ -44,4 +44,23 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		SqlRowSet sqlRowSet = employeeDao.getEmployeeDetailsBySalaryRange(startSal, endSal);
 		return sqlRowSet;
 	}
+	
+	@Override
+	public String insertEmployee(String name, String desg, float sal) {
+		int count = employeeDao.insertEmployee(name, desg, sal);
+		return count > 0 ? "EMPLOYEE CREATED SUCCESSFULLY" : "EMPLOYEE CREATION FAILED";
+	}
+	
+	@Override
+	public String updateEmloyeeSalByEmpNo(int empNo) {
+		float empSal = getEmployeeSalByEno(empNo);
+		int count = employeeDao.updateEmpSalByEno(empNo, (empSal+1500.0f));
+		return count > 0 ? "EMPLOYEE '"+empNo+"' UPDATED SUCCESSFULLY!" : "EMPLOYEE NOT UPDATED!";
+	}
+	
+	@Override
+	public String deleteEmloyeeByEmpNo(int empNo) {
+		int count = employeeDao.deleteEmployeeByEno(empNo);
+		return count > 0 ? "EMPLOYEE DELETED SUCCESSFULLY!" : "EMPLOYEE NOT DELETED!";
+	}
 }

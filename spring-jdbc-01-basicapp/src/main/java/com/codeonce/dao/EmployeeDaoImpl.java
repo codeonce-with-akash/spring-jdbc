@@ -45,8 +45,28 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(AppConstants.GET_EMP_DETAILS_BY_SAL_RANGE, startSal, endSalary);
 		return rowSet;
 	}
+	
+	@Override
+	public int insertEmployee(String name, String desg, float sal) {
+		int count = jdbcTemplate.update(AppConstants.INSERT_EMP_DETAILS, name,desg,sal);  
+		return count;
+	}
+	
+	@Override
+	public int updateEmpSalByEno(int eno, float sal) {
+		int count = jdbcTemplate.update(AppConstants.UPDATE_EMP_SAL, sal, eno);
+		return count;
+	}
+	
+	@Override
+	public int deleteEmployeeByEno(int eno) {
+		int count = jdbcTemplate.update(AppConstants.DELETE_EMP_BY_EMPNO, eno);
+		return count;
+	}
 
 }
+
+
 
 
 

@@ -11,4 +11,7 @@ public interface IEmployeeDao {
 	public Map<String, Object> getEmployeeDetailsByEno(int eno);
 	public List<Map<String, Object>> getEmployeeDetailsByDesgs(String desg1, String desg2, String desg3);
 	public SqlRowSet getEmployeeDetailsBySalaryRange(float startSal, float endSalary);
+	public int insertEmployee(String name, String desg, float sal);
+	public int updateEmpSalByEno(int eno, float sal);
+	public int deleteEmployeeByEno(int eno);
 }

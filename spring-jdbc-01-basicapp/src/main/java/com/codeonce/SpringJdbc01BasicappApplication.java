@@ -68,12 +68,44 @@ public class SpringJdbc01BasicappApplication {
 		try {
 			sqlRowSet = employeeService.getEmployeeDetailsBySalRange(1000.0f, 1500.0f);
 			System.out.println("Data from SqlRowSet ");
-			while(sqlRowSet.next()) {
-				System.out.println(sqlRowSet.getInt(1) + " " + sqlRowSet.getString(2) + " " + sqlRowSet.getString(3) + " " + sqlRowSet.getFloat(4) + " " + sqlRowSet.getInt(5));
+			while (sqlRowSet.next()) {
+				System.out.println(sqlRowSet.getInt(1) + " " + sqlRowSet.getString(2) + " " + sqlRowSet.getString(3)
+						+ " " + sqlRowSet.getFloat(4) + " " + sqlRowSet.getInt(5));
 			}
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
+		System.out.println("-----------------------------------------");
+
+		// 6. insert employee details
+		/*String msg = null;
+		try {
+			msg = employeeService.insertEmployee("YASH", "QA", 17000.0f);
+			System.out.println(msg);
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		
+		// 7. update employee details
+		String msgUpdate = null;
+		try {
+			msgUpdate = employeeService.updateEmloyeeSalByEmpNo(1);
+			System.out.println(msgUpdate);
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		*/
+		
+		// 8. delete employee details
+		String msgUpdate = null;
+		try {
+			msgUpdate = employeeService.deleteEmloyeeByEmpNo(5);
+			
+			System.out.println(msgUpdate);
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		
 	}
 
 }

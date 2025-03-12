@@ -1,0 +1,26 @@
+package com.codeonce.jdbc.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean
+	HikariDataSource hikariCpDatasource() {
+		HikariConfig config = new HikariConfig();
+		config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+		config.setUsername("scott");
+		config.setPassword("akash");
+		config.setDriverClassName("oracle.jdbc.OracleDriver");
+		config.setMinimumIdle(5);
+		config.setMaximumPoolSize(20);
+		config.setConnectionTimeout(60000);
+		config.setIdleTimeout(20000);
+		return new HikariDataSource(config);
+	}
+	
+}
