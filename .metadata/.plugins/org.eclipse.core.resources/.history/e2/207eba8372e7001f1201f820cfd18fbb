@@ -1,6 +1,0 @@
-package com.codeonce.constants;
-
-public class AppContants {
-	public final static String GET_EMP_COUNT = "SELECT COUNT(*) FROM EMP";
-	public final static String GET_EMP_SAL_BY_ENO = "SELECT SAL FROM EMP WHERE ENO=?";
-}

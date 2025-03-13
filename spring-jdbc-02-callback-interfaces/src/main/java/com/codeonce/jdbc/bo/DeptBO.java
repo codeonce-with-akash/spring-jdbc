@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeptBO {
-	private Integer deptNum;
-	private String deptName;
-	private String deptLoc;
+	private Integer deptno;
+	private String dname;
+	private String loc;
 }

@@ -14,8 +14,10 @@ public class SpringJdbc02CallbackInterfacesApplication {
 		ApplicationContext applicationContext = SpringApplication.run(SpringJdbc02CallbackInterfacesApplication.class, args);
 		IDeptService deptService = applicationContext.getBean(IDeptService.class);
 		DeptDto deptDto = deptService.getDeptDetailsByDeptNo(10);
+		System.out.println("-------------------------------------------------------------");
 		System.out.println("Department details are: ");
 		System.out.println("Dept No: " + deptDto.getDeptNum() + " | Dept Name: " + deptDto.getDeptName() + " | Dept Loc: " + deptDto.getDeptLoc());
+		System.out.println("-------------------------------------------------------------");
 	}
 
 }

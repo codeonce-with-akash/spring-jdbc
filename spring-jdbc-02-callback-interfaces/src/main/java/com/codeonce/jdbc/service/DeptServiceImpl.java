@@ -16,7 +16,7 @@ public class DeptServiceImpl implements IDeptService {
 	@Override
 	public DeptDto getDeptDetailsByDeptNo(Integer deptNo) {
 		DeptBO bo = deptDao.getDepartmentDetailsByDeptNo(deptNo);
-		return DeptDto.builder().deptNum(bo.getDeptNum()).deptName(bo.getDeptName()).deptLoc(bo.getDeptLoc()).build();
+		return DeptDto.builder().deptNum(bo.getDeptno()).deptName(bo.getDname()).deptLoc(bo.getLoc()).build();
 	}
 
 }
